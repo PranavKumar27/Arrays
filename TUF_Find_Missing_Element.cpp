@@ -64,9 +64,9 @@ int findMissingElement_Sol2(vector<int> Arr)
     return missing_val;
 
 }
-// TC --> O(N) for For loop
-// SC -O(1)
 
+// TC --> O(N) for For loop
+// SC -->O(1)
 int findMissingElement_Sol3(vector<int> Arr)
 {
     int missing_val=-1;
@@ -88,6 +88,8 @@ int findMissingElement_Sol3(vector<int> Arr)
 
 }
 
+// TC --> O(N+N) for For loop
+// SC -->O(1)
 int findMissingElement_Sol4(vector<int> Arr)
 {
     int missing_val=-1;
@@ -113,6 +115,8 @@ int findMissingElement_Sol4(vector<int> Arr)
 
 }
 
+// TC --> O(N) for For loop
+// SC -->O(1)
 int findMissingElement_Sol5(vector<int> Arr)
 {
     int missing_val=-1;
