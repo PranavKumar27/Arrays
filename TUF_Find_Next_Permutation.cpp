@@ -162,6 +162,12 @@ vector<int> find_Next_Permutaions_Sol3(vector<int> Arr)
         }
     }
 
+    if(index == -1)
+    {
+        reverse(Arr.begin(),Arr.end());
+        return Arr;
+    }
+
     // Step 2: Find Minimum value in Arr[index+1.......n-1] which is closest or min diff with Arr[index]
     for(int i=n-1;i>index;i--)
     {
