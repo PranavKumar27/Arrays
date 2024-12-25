@@ -24,6 +24,8 @@ bool cmp(int a,int b)
     return (a>b)?a:b;
 }
 
+// TC --> O(N!*N)
+// SC --> O(N) for ArrList Array + O(N) for Map 
 void Generate_Permutaions_Sol1(vector<int> ArrList,map<int,int> Mp,const vector<int>& Arr,vector<vector<int>>& PermutaionsList)
 {
     int n = Arr.size();
@@ -146,7 +148,8 @@ Step 3: Reverse the array from index+1
 
 
 */
-
+// TC --> O(3N)
+// SC --> O(N) for Ans Array
 vector<int> find_Next_Permutaions_Sol3(vector<int> Arr)
 {
     int n = Arr.size();
@@ -167,7 +170,6 @@ vector<int> find_Next_Permutaions_Sol3(vector<int> Arr)
         reverse(Arr.begin(),Arr.end());
         return Arr;
     }
-
     // Step 2: Find Minimum value in Arr[index+1.......n-1] which is closest or min diff with Arr[index]
     for(int i=n-1;i>index;i--)
     {
