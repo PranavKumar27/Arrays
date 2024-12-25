@@ -16,7 +16,7 @@ void print_1D_v(vector<int> Arr)
 vector<int> ReArrangeElementsBySign_Sol1(const vector<int>& Arr)
 {
     int n = Arr.size();
-    vector<int>Pos,Neg;
+    vector<int> Pos,Neg;
     for(int i=0;i<n;i++)
     {
         if(Arr[i]>0) // No Zeros
@@ -39,7 +39,6 @@ vector<int> ReArrangeElementsBySign_Sol1(const vector<int>& Arr)
 vector<int> ReArrangeElementsBySign_Sol2(const vector<int>& Arr)
 {
     int n = Arr.size();
-    vector<int>Pos,Neg;
     int pos=0,neg=0;
     vector<int> Ans(n);
     for(int i=0;i<n;i++)
@@ -55,9 +54,7 @@ vector<int> ReArrangeElementsBySign_Sol2(const vector<int>& Arr)
            Ans[2*neg+1] = Arr[i];
            neg++;
         }
-
     }
-
     return Ans;
 }
 
