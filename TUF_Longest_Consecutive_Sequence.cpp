@@ -5,6 +5,9 @@
 
 using namespace std;
 
+// Brute Solution
+// TC --> O(N*N)
+// SC --> O(1)
 int find_maxLen_Consecutive_Seq_Sol1(vector<int> Arr)
 {
     int n = Arr.size();
