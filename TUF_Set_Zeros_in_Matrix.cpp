@@ -37,7 +37,9 @@ void MarkCol(int j,vector<vector<int>>& Arr)
         Arr[i][j]=-1;
     }
 }
-
+// Brute Solution
+// TC --> O(M*N *( M+N ) ) + O(M*N) ~~ O(N^3)
+// SC --> O(1)
 void SetZerosInMatrix_Sol1(vector<vector<int>>& Arr)
 {
     int m = Arr.size();
@@ -72,6 +74,9 @@ void SetZerosInMatrix_Sol1(vector<vector<int>>& Arr)
     return;
 }
 
+// Better Solution
+// TC --> O(M*N ) + O(M*N) ~~ O(N^2)
+// SC --> O(M+N)
 void SetZerosInMatrix_Sol2(vector<vector<int>>& Arr)
 {
     int m = Arr.size();
@@ -106,6 +111,9 @@ void SetZerosInMatrix_Sol2(vector<vector<int>>& Arr)
 
 }
 
+// Optimal Solution
+// TC --> O(M*N ) + O(M*N) + O(M) + O(N) ~~ O(N^2)
+// SC --> O(1)
 void SetZerosInMatrix_Sol3(vector<vector<int>>& Arr)
 {
     int m = Arr.size();
