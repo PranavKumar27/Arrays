@@ -162,6 +162,10 @@ int LongestSubArrayLen_Sol4(vector<int> Arr,int k)
     return max_len;
 }
 
+// Optimal 2 Pointer Approach
+// Works only if Arr only has Positive and Zero, No Negatives
+// We used two pointers i for moving ahead and j for reducing sub Array Len, The Len of Sub Array = i-j
+// Idea Here is keep Adding to sum using i till we exceed K, Once Exceed Remove from behind using variable j.
 // TC --> O(2N)
 // SC --> O(1)
 
