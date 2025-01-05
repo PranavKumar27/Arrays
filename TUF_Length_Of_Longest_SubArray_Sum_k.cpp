@@ -169,33 +169,39 @@ int LongestSubArrayLen_Sol4(vector<int> Arr,int k)
 // TC --> O(2N)
 // SC --> O(1)
 
-int LongestSubArrayLen_Sol5(vector<int> Arr,int k)
+int LongestSubArrayLen_Sol5(vector<int>& Arr,int k)
 {
-    int n = Arr.size();
-    int sum = Arr[0],max_len = -1e9,len=0;
-    int i=0,j=0;
-    while(j<n)
-    {
-        while(i<=j && sum>k)
-        {
-            sum -= Arr[i];
-            i++;
-        }
+    int max_len = -1e9;
 
+    int n = Arr.size();
+    int i = 0;// Forward pointer
+    int j = 0; // Backward Pointer
+    int sum = Arr[i]; // Note sum is starting from Arr[0]
+    int len;
+    while(i<n)
+    {
         if(sum==k)
         {
-            len = j-i+1;
-            print_SubArray(Arr,i,j);
+            print_SubArray(Arr,j,i);
+            len = i-j+1;
             max_len = max(max_len,len);
+            i++;
+            sum = sum+Arr[i];
         }
-        j++;
-        if(j<n)
+        else if(sum>k)
         {
-            sum+=Arr[j];
+            // Reduce from back, increase j till sum<k
+            while(j<=i && sum>k)
+            {
+                sum = sum - Arr[j];
+                j++;
+            }
         }
-
-
-
+        else
+        {
+            i++;
+            sum = sum+Arr[i];
+        }
     }
     return max_len;
 }
