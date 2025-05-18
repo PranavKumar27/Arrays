@@ -100,9 +100,10 @@ void merge_Arr(vector<int>& Arr,int low, int mid,int high)
         right++;
     }
 
+    int k=0;
     for(int i=low;i<=high;i++)
     {
-        Arr[i]=temp[i-low];
+        Arr[i]=temp[k++];
     }
 }
 
