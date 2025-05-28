@@ -10,6 +10,53 @@ void print_1D_v(vector<int> Arr)
         cout << d << " ";
     cout << endl;
 }
+
+
+// Optimal Sol 1 for Left Rotate
+// TC - O(N)
+// SC - O(N)
+void rotate_left(vector<int>& Arr, int k) {
+  
+    vector<int> temp = Arr;
+    int sz = Arr.size();
+    k=k%sz;
+    for(int i=0;i<sz;i++)
+    {
+        int move_by = i-k;
+        if(move_by>=0)
+        {
+            Arr[move_by]=temp[i];
+        }
+        else
+        {
+            Arr[(move_by+sz)%sz] = temp[i];
+        }
+    }
+}
+
+// Optimal Sol 1 for Right Rotate
+// TC - O(N)
+// SC - O(N)
+void rotate_right(vector<int>& Arr, int k) {
+  
+    vector<int> temp = Arr;
+    int sz = Arr.size();
+    k=k%sz;
+    for(int i=0;i<sz;i++)
+    {
+        int move_by = i+k;
+        if(move_by<sz)
+        {
+            Arr[move_by]=temp[i];
+        }
+        else
+        {
+            Arr[(move_by)%sz] = temp[i];
+        }
+    }
+}
+
+
 // TC --> O(N)
 // SC --> O(N)
 vector<int> RotateArrayLeftByK_Sol1(const vector<int>& Arr,int k)
@@ -27,6 +74,7 @@ vector<int> RotateArrayLeftByK_Sol1(const vector<int>& Arr,int k)
     }
     return New_Arr;
 }
+
 
 // TC --> O(k) + O(n-k) + O(k) = O(k+n)
 // SC --> O(N)
