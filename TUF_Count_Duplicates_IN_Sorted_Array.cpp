@@ -41,18 +41,24 @@ int countUniqueElements_Sol1(vector<int> Arr)
 // Sc --> O(1)
 int countUniqueElements_Sol2(vector<int> Arr)
 {
-    int i=0;
-	for(int j=1;j<Arr.size();j++)
-	{
-		int val = Arr[i];
+	int sz = Arr.size();
+	if(sz<=1)
+	 return sz;
 
-		 if(Arr[j]!=val)
+	int idx = 1;
+	for(int i=1;i<sz;i++)
+	{
+	 	if(Arr[i]!=Arr[i-1])
 		 {
-			 i=i+1;
-			 Arr[i] = Arr[j];
+			 Arr[idx++] = Arr[i];
 		 }
 	}
-	return i+1;
+	//cout << "idx = " << idx << endl;
+	Arr.erase(Arr.begin()+idx,Arr.end());
+	for(auto d:Arr)
+	    cout << d << ",";
+	cout << endl;
+	return idx;
 }
 
 // TC -> O(N)
