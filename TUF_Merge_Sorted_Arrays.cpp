@@ -87,6 +87,9 @@ vector<int> merge_Sorted_Array_Sol2(vector<int>& Arr1,vector<int>& Arr2)
 }
 
 /*
+
+
+NOTE :: This method works only for Unqiue Elements in the Array
  Gap Method Solution
   Gap = 5
                      ^
