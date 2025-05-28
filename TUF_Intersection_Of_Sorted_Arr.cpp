@@ -70,26 +70,26 @@ vector<int> SortedArrayInterSection_Sol1(vector<int> Arr1,vector<int> Arr2)
 }
 
 // If Array is not sorted as done in Leetcode
-vector<int> intersection(vector<int>& Arr1, vector<int>& Arr2) {
-        
-        map<int,int> mp1;
-        vector<int> Intersection;
+vector<int> intersection(vector<int>& Arr1, vector<int>& Arr2) 
+{   
+    map<int,int> mp1;
+    vector<int> Intersection;
 
-        for(auto d:Arr1)
-        {
-            mp1[d]++;
-        }
-
-        for(auto d:Arr2)
-        {
-            auto it = find(Intersection.begin(),Intersection.end(),d);
-            if(mp1.find(d)!=mp1.end() && it == Intersection.end())
-            {
-                Intersection.push_back(d);
-            }
-        }
-        return Intersection;
+    for(auto d:Arr1)
+    {
+        mp1[d]++;
     }
+
+    for(auto d:Arr2)
+    {
+        auto it = find(Intersection.begin(),Intersection.end(),d);
+        if(mp1.find(d)!=mp1.end() && it == Intersection.end())
+        {
+            Intersection.push_back(d);
+        }
+    }
+    return Intersection;
+}
 
 int main()
 {
