@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 
-
+// Link: https://www.geeksforgeeks.org/find-second-largest-element-array/
+ 
 int Second_largest(vector<int> Arr)
 {
     int f_largest = Arr[0];
