@@ -4,18 +4,33 @@
 
 using namespace std;
 
+/*
+
+Input: arr[] = [2, 2, 2, 2, 2]
+Output: [2]
+Explanation: All the elements are 2, So only keep one instance of 2.
+
+Input: arr[] = [1, 2, 2, 3, 4, 4, 4, 5, 5]
+Output: [1, 2, 3, 4, 5]
+
+Input: arr[] = [1, 2, 3]
+Output: [1, 2, 3]
+Explanation : No change as all elements are distinct.
+
+*/
 // TC -> O(2N)
 // Sc --> O(N)
 int countUniqueElements_Sol1(vector<int> Arr)
 {
     set<int> S;
-	for(int i=0;i<Arr.size();i++)
-	{
-	    int val = Arr[i];
-		S.insert(val);
-	}
-	int i=0;
-	for(auto itr:S)
+    for(int i=0;i<Arr.size();i++)
+    {
+	int val = Arr[i];
+	S.insert(val);
+    }
+
+    int i=0;
+    for(auto itr:S)
     {
         Arr[i++] = itr;
     }
